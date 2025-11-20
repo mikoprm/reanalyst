@@ -1,0 +1,283 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/fonts/Geist-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../src/assets/fonts/Geist-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../src/fonts/Geist-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../src/fonts/Geist-Bold.woff2') format('woff2');
+}
+
+:root {
+  --light-base: #ffffff;
+  --light-accent: #efeff3;
+  --light-opacity: rgba(255, 255, 255, 0.1);
+  --dark-base: #000000;
+  --dark-mode: #080808;
+  --dark-accent: #363636;
+  --blue-700: #1447e6;
+  --gray-200: #e5e7eb;
+  --gray-500: #6a7282;
+  --grey: #dadada;
+  --accent-1: #dc2de2;
+  --accent-2: #8e2de2;
+  --accent-3: #6a11cb;
+  --gradient: linear-gradient(45deg, #dc2de2, #8e2de2, #6a11cb, #4a00e0, #2196f3);
+  --border: 1px solid var(--gray-500);
+  --opacity: .8;
+  --transition: all 300ms ease-in-out;
+  --animation: 500ms infinite var(--gradient);
+
+  /*Size*/
+  --size-xx-small: 0.188rem;
+  --size-x-small: 0.313rem;
+  --size-small-base: 0.5rem;
+  --size-small-l: 0.625rem;
+  --size-small-xl: 0.75rem;
+  --size-base-xs: 0.875rem;
+  --size-base-sm: 0.938rem;
+  --size-base: 1rem;
+  --size-1-xl: 1.125rem;
+  --size-2-base: 1.25rem;
+  --size-2-xl: 1.5rem;
+  --size-3-base: 1.875rem;
+  --size-3-xl: 2.25rem;
+  --size-4-base: 2.5rem;
+  --size-4-xl: 3rem;
+  --size-5-base: 3.125rem;
+  --size-6-base: 3.75rem;
+  --size-7-base: 4.375rem;
+  --size-8-base: 5rem;
+  --text-size: 1.125rem;
+
+  /*Clamp*/
+  --clamp-x-small: clamp(0.188rem, 1vw, 0.313rem);
+  --clamp-small-l: clamp(0.5rem, 1vw, 0.625rem);
+  --clamp-small-xl: clamp(0.625rem, 1vw, 0.75rem);
+  --clamp-base-xs: clamp(0.75rem, 1vw, 0.875rem);
+  --clamp-base-sm: clamp(0.875rem, 1vw, 0.938rem);
+  --clamp-base: clamp(0.938rem, 2vw, 1rem);
+  --clamp-1-xl: clamp(1rem, 2vw, 1.125rem);
+  --clamp-2-base: clamp(1rem, 2vw, 1.25rem);
+  --clamp-2-xl: clamp(1.25rem, 2.4vw, 1.5rem);
+  --clamp-3-base: clamp(1.375rem, 3vw, 1.875rem);
+  --clamp-3-xl: clamp(1.5rem, 3.2vw, 2rem);
+  --clamp-4-base: clamp(2rem, 4vw, 2.5rem);
+  --clamp-4-xl: clamp(2.5rem, 4.8vw, 3rem);
+  --clamp-5-base: clamp(2.25rem, 5vw, 3.125rem);
+  --clamp-7-base: clamp(3.125rem, 7vw, 4.375rem);
+  --clamp-7-xl: clamp(3.5rem, 7.2vw, 4.5rem);
+  --clamp-8-base: clamp(4.5rem, 8vw, 5rem);
+
+  /* Font Sizing 1.200 - Minor Third */
+  --fz-clamp-h1: clamp(2.5rem, 2.214rem + 1.429vw, 3.5rem);
+  --fz-clamp-h2: clamp(2rem, 1.857rem + 0.714vw, 2.5rem);
+  --fz-clamp-h3: clamp(1.75rem, 1.679rem + 0.357vw, 2rem);
+  --fz-clamp-h4: clamp(1.5rem, 1.429rem + 0.357vw, 1.75rem);
+  --fz-clamp-h5: clamp(1.25rem, 1.179rem + 0.357vw, 1.5rem);
+  --fz-clamp-h6: clamp(1.125rem, 1.089rem + 0.179vw, 1.25rem);
+  --fz-base: 1rem;
+  --fz-large: 1.125rem;
+  --fz-clamp-large: clamp(1rem, 0.964rem + 0.179vw, 1.125rem);
+
+  /*Font Weight*/
+  --fw-thin: 100;
+  --fw-extraLight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+  --fw-extraBold: 800;
+  --fw-black: 900;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  line-height: 1.6;
+  font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--clamp-7-xl);
+}
+
+body {
+  background-color: var(--light-accent);
+  max-inline-size: 90rem;
+  margin-inline: auto;
+  transition: var(--transition);
+}
+
+body.dark-mode {
+  background-color: var(--dark-mode);
+  color: var(--light-accent);
+}
+
+h1,
+.h1 {
+  font-size: var(--fz-clamp-h1);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.1;
+}
+
+h2,
+.h2 {
+  font-size: var(--fz-clamp-h2);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.2;
+}
+
+h3,
+.h3 {
+  font-size: var(--fz-clamp-h3);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.2;
+}
+
+h4,
+.h4 {
+  font-size: var(--fz-clamp-h4);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.2;
+}
+
+h5,
+.h5 {
+  font-size: var(--fz-clamp-h5);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.2;
+}
+
+h6,
+.h6 {
+  font-size: var(--fz-clamp-h6);
+  font-weight: var(--fw-semiBold);
+  line-height: 1.4;
+}
+
+p,
+.p,
+address,
+code,
+figcaption,
+input,
+textarea {
+  font-size: var(--fz-clamp-large);
+  font-weight: var(--fw-regular);
+  font-style: normal;
+}
+
+b,
+strong,
+.text-bold {
+  font-size: var(--fz-clamp-large);
+  font-weight: var(--fw-medium);
+}
+
+small,
+.text-small {
+  font-size: var(--size-base);
+}
+
+.text-center {
+  text-align: center;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+a,
+button,
+.btn {
+  font-size: var(--fz-clamp-large);
+  line-height: normal;
+  color: inherit;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+a:is(:hover, :focus-visible),
+button:is(:hover, :focus-visible),
+.btn:is(:hover, :focus-visible) {
+  opacity: var(--opacity);
+}
+
+button,
+.btn {
+  font-size: var(--size-base);
+  width: fit-content;
+  color: var(--dark-base);
+  background-color: var(--gray-200);
+  border: none;
+  padding: .5em 1.25em;
+  border-radius: var(--size-x-small);
+}
+
+.btn-primary {
+  color: var(--light-base);
+  background-color: var(--blue-700);
+}
+
+.btn-secondary {
+  color: var(--light-base);
+  background-color: var(--purple-700);
+}
+
+.btn-gradient {
+  color: var(--light-base);
+  background-image: var(--gradient);
+
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: var(--clamp-2-base);
+}
+
+.wrapper-contents {
+  max-inline-size: min(100% - clamp(.5rem, 5vw, 8rem), 81.25rem);
+  margin-inline: auto;
+  padding-block: min(12%, 3rem);
+}
+
+main {
+  margin-top: var(--clamp-7-xl);
+}
