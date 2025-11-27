@@ -1,5 +1,5 @@
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import profilePic from "../assets/profile-pic.webp";
 import profilePic2 from "../assets/profile-pic2.webp";
 import aboutPic from "../assets/about-pic.webp";
