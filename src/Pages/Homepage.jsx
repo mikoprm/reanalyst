@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import profilePic from "../assets/profile-pic.webp";
-import profilePic2 from "../assets/profile-pic2.webp";
 import aboutPic from "../assets/about-pic.webp";
 import "../styles/Homepage.css";
 
@@ -13,7 +12,7 @@ const Homepage = () => {
         <section aria-labelledby="hero">
           <div className="wrapper-contents hero">
             <img
-              src={profilePic2}
+              src={profilePic}
               alt="Profile image"
               width="400"
               height="400"
