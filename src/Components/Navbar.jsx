@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTheme } from "../contexts/ThemeContext";
-import "../styles/Navbar.css";
+import "../styles/navbar.css";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();

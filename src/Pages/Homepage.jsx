@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import profilePic from "../assets/profile-pic.webp";
 import aboutPic from "../assets/about-pic.webp";
-import "../styles/Homepage.css";
+import "../styles/homepage.css";
 
 const Homepage = () => {
   return (
