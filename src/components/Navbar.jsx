@@ -11,6 +11,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeNavbar = () => {
+    setIsOpen(false); // Sets the state to close the navbar after click link
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navMenuRef.current && !navMenuRef.current.contains(event.target)) {
@@ -18,12 +22,19 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside); // Use 'mousedown' for better responsiveness
+    // Add event listener when the menu is open
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      // Remove event listener when the menu is closed
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
 
+    // Cleanup function to remove event listener when component unmounts
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside); // Clean up the event listener
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [navMenuRef]);
+  }, [isOpen]); // Re-run effect when isOpen changes
 
   return (
     <header className="header">
@@ -36,22 +47,22 @@ const Navbar = () => {
           className={`nav__menu ${isOpen ? "active" : ""}`}
         >
           <li>
-            <a href="/" className="nav__link">
+            <a onClick={closeNavbar} href="/" className="nav__link">
               Home
             </a>
           </li>
           <li>
-            <a href="/" className="nav__link">
+            <a onClick={closeNavbar} href="#about" className="nav__link">
               About
             </a>
           </li>
           <li>
-            <a href="/" className="nav__link">
+            <a onClick={closeNavbar} href="#projects" className="nav__link">
               Projects
             </a>
           </li>
           <li>
-            <a href="/" className="nav__link">
+            <a onClick={closeNavbar} href="#contact" className="nav__link">
               Contact
             </a>
           </li>
