@@ -1,0 +1,13 @@
+footer {
+    background-image: var(--gradient);
+    color: var(--light-base);
+}
+
+.footer {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
