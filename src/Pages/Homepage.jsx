@@ -35,7 +35,7 @@ const Homepage = () => {
         <section aria-labelledby="about">
           <div className="wrapper-contents about">
             <h2 id="about" className="text-center">
-              My Journey & Experiences
+              About Me
             </h2>
             <article className="about__contents">
               <img
